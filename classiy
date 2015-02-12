@@ -1,0 +1,339 @@
+Sub classify()
+  Dim i&, data
+  data = Range("A2", Range("C2").End(xlDown))
+  For i = 1 To UBound(data)
+      data(i, 2) = "省略"
+      If InStr(data(i, 3), "打不开") Then data(i, 2) = "应用无法打开"
+      If InStr(data(i, 3), "无法打开") Then data(i, 2) = "应用无法打开"
+      If InStr(data(i, 3), "软件运行不了") Then data(i, 2) = "应用无法打开"
+   
+      If InStr(data(i, 3), "启动") Then data(i, 2) = "应用响应慢"
+      If InStr(data(i, 3), "打开慢了点") Then data(i, 2) = "应用响应慢"
+      If InStr(data(i, 3), "打开程序都很慢") Then data(i, 2) = "应用响应慢"
+
+      If InStr(data(i, 3), "加载") Then data(i, 2) = "视频加载缓慢"
+
+      If InStr(data(i, 3), "闪退") Then data(i, 2) = "闪退"    
+      If InStr(data(i, 3), "退") Then data(i, 2) = "闪退"
+      If InStr(data(i, 3), "关") Then data(i, 2) = "闪退"
+      If InStr(data(i, 3), "掉") Then data(i, 2) = "闪退"
+      If InStr(data(i, 3), "闪") Then data(i, 2) = "闪退"
+      If InStr(data(i, 3), "弹出") Then data(i, 2) = "闪退"
+      If InStr(data(i, 3), "crash") Then data(i, 2) = "闪退"
+      If InStr(data(i, 3), "崩溃") Then data(i, 2) = "闪退"
+
+
+      If InStr(data(i, 3), "看不了") Then data(i, 2) = "无法播放"
+      If InStr(data(i, 3), "放不了") Then data(i, 2) = "无法播放"
+      If InStr(data(i, 3), "放不出来") Then data(i, 2) = "无法播放"
+      If InStr(data(i, 3), "不能播") Then data(i, 2) = "无法播放"
+      If InStr(data(i, 3), "播不出来") Then data(i, 2) = "无法播放"
+      If InStr(data(i, 3), "无法播放") Then data(i, 2) = "无法播放"
+      If InStr(data(i, 3), "沒办法直播") Then data(i, 2) = "无法播放"
+      If InStr(data(i, 3), "无法看") Then data(i, 2) = "无法播放"
+      If InStr(data(i, 3), "不能看") Then data(i, 2) = "无法播放" 
+      If InStr(data(i, 3), "无法观看") Then data(i, 2) = "无法播放" 
+      If InStr(data(i, 3), "没法看直播") Then data(i, 2) = "无法播放" 
+      If InStr(data(i, 3), "看不到直播") Then data(i, 2) = "无法播放" 
+      If InStr(data(i, 3), "直播不了") Then data(i, 2) = "无法播放" 
+      If InStr(data(i, 3), "播放不了") Then data(i, 2) = "无法播放"  
+      If InStr(data(i, 3), "无法点击播放") Then data(i, 2) = "无法播放" 
+      If InStr(data(i, 3), "不能观看") Then data(i, 2) = "无法播放" 
+      If InStr(data(i, 3), "直播没反应") Then data(i, 2) = "无法播放" 
+      If InStr(data(i, 3), "没法播放") Then data(i, 2) = "无法播放" 
+
+      If InStr(data(i, 3), "卡") Then data(i, 2) = "播放卡顿"
+      If InStr(data(i, 3), "断") Then data(i, 2) = "播放卡顿"
+      If InStr(data(i, 3), "顿") Then data(i, 2) = "播放卡顿"
+      If InStr(data(i, 3), "不动") Then data(i, 2) = "播放卡顿"
+      If InStr(data(i, 3), "缓冲") Then data(i, 2) = "播放卡顿"
+      If InStr(data(i, 3), "不流畅") Then data(i, 2) = "播放卡顿"
+      If InStr(data(i, 3), "不顺畅") Then data(i, 2) = "播放卡顿"
+      If InStr(data(i, 3), "停") Then data(i, 2) = "播放卡顿"
+      If InStr(data(i, 3), "斷斷續續") Then data(i, 2) = "播放卡顿"
+      If InStr(data(i, 3), "放都放不走") Then data(i, 2) = "播放卡顿"
+
+      If InStr(data(i, 3), "串台") Then data(i, 2) = "节目跳转问题"
+      If InStr(data(i, 3), "转到其他节目") Then data(i, 2) = "节目跳转问题"
+      If InStr(data(i, 3), "自动换台") Then data(i, 2) = "节目跳转问题"
+      If InStr(data(i, 3), "插播") Then data(i, 2) = "节目中间穿插其他节目"
+      If InStr(data(i, 3), "片段在里面") Then data(i, 2) = "节目中间穿插其他节目"
+      If InStr(data(i, 3), "出现几秒的其他视频内容") Then data(i, 2) = "节目中间穿插其他节目"
+      If InStr(data(i, 3), "重复放") Then data(i, 2) = "节目重复播放"
+      If InStr(data(i, 3), "重复播放片段") Then data(i, 2) = "节目重复播放"
+      
+
+      If InStr(data(i, 3), "目录") Then data(i, 2) = "EPG问题"
+      If InStr(data(i, 3), "节目表") Then data(i, 2) = "EPG问题"
+      If InStr(data(i, 3), "epg") Then data(i, 2) = "EPG问题"
+      
+      If InStr(data(i, 3), "回看") Then data(i, 2) = "回看问题"
+      If InStr(data(i, 3), "回放") Then data(i, 2) = "回看问题"
+      If InStr(data(i, 3), "回播") Then data(i, 2) = "回看问题" 
+      If InStr(data(i, 3), "看往期") Then data(i, 2) = "回看问题" 
+      If InStr(data(i, 3), "重播") Then data(i, 2) = "回看问题"
+      
+      If InStr(data(i, 3), "时移") Then data(i, 2) = "时移问题" 
+      
+
+      If InStr(data(i, 3), "快进") Then data(i, 2) = "自动快进"
+      If InStr(data(i, 3), "加速播放") Then data(i, 2) = "自动快进"
+      If InStr(data(i, 3), "很快很快") Then data(i, 2) = "自动快进"
+      If InStr(data(i, 3), "快播") Then data(i, 2) = "自动快进"
+
+      If InStr(data(i, 3), "慢放") Then data(i, 2) = "自动慢放"
+      If InStr(data(i, 3), "慢动作") Then data(i, 2) = "自动慢放"
+      If InStr(data(i, 3), "减速") Then data(i, 2) = "自动慢放"
+      If InStr(data(i, 3), "特慢") Then data(i, 2) = "自动慢放"
+      If InStr(data(i, 3), "慢进") Then data(i, 2) = "自动慢放"
+      If InStr(data(i, 3), "放慢了") Then data(i, 2) = "自动慢放"
+      If InStr(data(i, 3), "拖慢") Then data(i, 2) = "自动慢放"
+
+        
+      If InStr(data(i, 3), "不同步") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "声音比") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "画面比") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "影慢") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "声音提前") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "不一") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "声音对不上") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "不合拍") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "声音和画面对不上") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "语音跟不上画画") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "画面跟声音不对") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "语言跟不上节奏") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "口型对不上") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "嘴对不上") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "对不上") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "声音跟不上") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "画面与声音不匹配") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "视频和声音不匹配") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "声音与画面不协同") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "画面慢一些") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "字幕和声音不齐") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "字幕比画面快") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "比图像超前") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "画面与声音不能同步") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "视频比声音慢") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "视频跟不上音频") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "画面和语音不协调") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "声画不能同步") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "图像和声音相差") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "声画错位") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "画面和语音脱节") Then data(i, 2) = "声画不同步"
+      If InStr(data(i, 3), "影音不能同步") Then data(i, 2) = "声画不同步"
+      
+      
+      If InStr(data(i, 3), "黑屏") Then data(i, 2) = "只有声音没有图像"
+      If InStr(data(i, 3), "声音正常") Then data(i, 2) = "只有声音没有图像"
+      If InStr(data(i, 3), "只有声音") Then data(i, 2) = "只有声音没有图像"
+      If InStr(data(i, 3), "没有图像") Then data(i, 2) = "只有声音没有图像"
+      If InStr(data(i, 3), "看不到画面") Then data(i, 2) = "只有声音没有图像"
+      If InStr(data(i, 3), "图像没有") Then data(i, 2) = "只有声音没有图像"
+      If InStr(data(i, 3), "没图像") Then data(i, 2) = "只有声音没有图像"
+      If InStr(data(i, 3), "没画面") Then data(i, 2) = "只有声音没有图像"
+      If InStr(data(i, 3), "没有画面") Then data(i, 2) = "只有声音没有图像"
+      If InStr(data(i, 3), "无图像") Then data(i, 2) = "只有声音没有图像"
+      If InStr(data(i, 3), "有声音") Then data(i, 2) = "只有声音没有图像"
+     
+      If InStr(data(i, 3), "没声音") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+      If InStr(data(i, 3), "无声音") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+      If InStr(data(i, 3), "没有声音") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+      If InStr(data(i, 3), "声音小") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+      If InStr(data(i, 3), "声音很小") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+      If InStr(data(i, 3), "杂音") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+      If InStr(data(i, 3), "噪声") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+      If InStr(data(i, 3), "噪音") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+      If InStr(data(i, 3), "鬼叫") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+      If InStr(data(i, 3), "声音不行") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+      If InStr(data(i, 3), "怪物") Then data(i, 2) = "声音问题（没有声音、声音小、杂音、声音失真）"
+
+      
+      If InStr(data(i, 3), "花屏") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "屏幕花") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "模糊") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "画质") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "不清") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "不够清晰") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "马赛克") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "清晰") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "重影") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "拖影") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "色块") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "清晰度较差") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+      If InStr(data(i, 3), "清晰度不够") Then data(i, 2) = "清晰度问题（花屏、模糊、重影）"
+
+      If InStr(data(i, 3), "标清") Then data(i, 2) = "清晰度切换问题（清晰度自动跳转、默认清晰度错误、切换困难）"
+      If InStr(data(i, 3), "高清") Then data(i, 2) = "清晰度切换问题（清晰度自动跳转、默认清晰度错误、切换困难）"
+      If InStr(data(i, 3), "超高清") Then data(i, 2) = "清晰度切换问题（清晰度自动跳转、默认清晰度错误、切换困难）"
+      If InStr(data(i, 3), "极速") Then data(i, 2) = "清晰度切换问题（清晰度自动跳转、默认清晰度错误、切换困难）"
+
+      If InStr(data(i, 3), "全屏") Then data(i, 2) = "屏幕调整问题"
+      If InStr(data(i, 3), "画面比例不正确") Then data(i, 2) = "屏幕调整问题"
+      If InStr(data(i, 3), "画面尺寸") Then data(i, 2) = "屏幕调整问题"
+      If InStr(data(i, 3), "屏幕") Then data(i, 2) = "屏幕调整问题"
+      If InStr(data(i, 3), "满屏") Then data(i, 2) = "屏幕调整问题"     
+      If InStr(data(i, 3), "横屏") Then data(i, 2) = "屏幕调整问题"
+      If InStr(data(i, 3), "适配") Then data(i, 2) = "屏幕调整问题"
+      If InStr(data(i, 3), "角度") Then data(i, 2) = "屏幕调整问题"
+      If InStr(data(i, 3), "方向") Then data(i, 2) = "屏幕调整问题"
+      If InStr(data(i, 3), "调节画面") Then data(i, 2) = "屏幕调整问题"
+      If InStr(data(i, 3), "亮度") Then data(i, 2) = "屏幕调整问题"
+      
+
+      If InStr(data(i, 3), "同步在电视上") Then data(i, 2) = "airplay和DLAN功能需求"
+      If InStr(data(i, 3), "dlna") Then data(i, 2) = "airplay和DLNA功能需求"
+      If InStr(data(i, 3), "DLNA") Then data(i, 2) = "airplay和DLNA功能需求"
+      If InStr(data(i, 3), "airplay") Then data(i, 2) = "airplay和DLAN功能需求"
+
+      If InStr(data(i, 3), "浮窗播放") Then data(i, 2) = "希望提供浮窗播放功能"
+      If InStr(data(i, 3), "小窗播放") Then data(i, 2) = "希望提供浮窗播放功能"
+      If InStr(data(i, 3), "悬浮窗") Then data(i, 2) = "希望提供浮窗播放功能"
+
+      
+      If InStr(data(i, 3), "下载") Then data(i, 2) = "希望提供视频下载功能"
+      If InStr(data(i, 3), "离线缓存") Then data(i, 2) = "希望提供视频下载功能" 
+      If InStr(data(i, 3), "下载视频") Then data(i, 2) = "希望提供视频下载功能" 
+      If InStr(data(i, 3), "缓存") Then data(i, 2) = "希望提供视频下载功能"
+      If InStr(data(i, 3), "离线") Then data(i, 2) = "希望提供视频下载功能"
+      If InStr(data(i, 3), "保存") Then data(i, 2) = "希望提供视频下载功能"
+      If InStr(data(i, 3), "存下") Then data(i, 2) = "希望提供视频下载功能"
+
+      If InStr(data(i, 3), "听电视") Then data(i, 2) = "听电视功能需求"
+      If InStr(data(i, 3), "听新闻") Then data(i, 2) = "听电视功能需求"
+      If InStr(data(i, 3), "只播送声音模式") Then data(i, 2) = "听电视功能需求"
+    
+      If InStr(data(i, 3), "比电视要晚") Then data(i, 2) = "与电视播出同步问题"
+
+      
+      If InStr(data(i, 3), "安卓电视") Then data(i, 2) = "智能电视需求"
+      If InStr(data(i, 3), "智能电视") Then data(i, 2) = "智能电视需求"
+      If InStr(data(i, 3), "LINK大眼睛") Then data(i, 2) = "智能电视需求"
+
+      If InStr(data(i, 3), "多屏") Then data(i, 2) = "多屏互动功能需求"
+
+      If InStr(data(i, 3), "后台播放") Then data(i, 2) = "后台播放功能需求"
+      
+      If InStr(data(i, 3), "睡眠定时") Then data(i, 2) = "定时关闭功能需求"
+      If InStr(data(i, 3), "时间限制功能") Then data(i, 2) = "定时关闭功能需求"
+      If InStr(data(i, 3), "定时关") Then data(i, 2) = "定时关闭功能需求"
+
+      If InStr(data(i, 3), "分享") Then data(i, 2) = "分享问题"
+      If InStr(data(i, 3), "收藏") Then data(i, 2) = "收藏问题"
+      If InStr(data(i, 3), "预约") Then data(i, 2) = "预约问题"
+      
+      If InStr(data(i, 3), "1005") Then data(i, 2) = "提示1005错误"
+      If InStr(data(i, 3), "初始化错误") Then data(i, 2) = "提示网络初始化错误"
+      If InStr(data(i, 3), "数据获取") Then data(i, 2) = "提示数据获取失败"
+      If InStr(data(i, 3), "超时") Then data(i, 2) = "提示网络连接超时"
+      If InStr(data(i, 3), "连接") Then data(i, 2) = "提示网络连接超时"
+      If InStr(data(i, 3), "请检查网络设置") Then data(i, 2) = "提示无法连接网络"
+      If InStr(data(i, 3), "说连不上网络") Then data(i, 2) = "提示无法连接网络"
+      If InStr(data(i, 3), "连接失败") Then data(i, 2) = "提示网络连接失败"
+      If InStr(data(i, 3), "网络错误") Then data(i, 2) = "提示网络连接错误"
+      If InStr(data(i, 3), "服务器") Then data(i, 2) = "提示服务器维护"
+      If InStr(data(i, 3), "获取失败") Then data(i, 2) = "提示播放地址获取失败"
+      If InStr(data(i, 3), "播放地址") Then data(i, 2) = "提示播放地址获取失败"
+      If InStr(data(i, 3), "连接服务器") Then data(i, 2) = "提示连接服务器失败"
+      If InStr(data(i, 3), "请求失败") Then data(i, 2) = "提示请求失败"
+
+      
+      If InStr(data(i, 3), "版权限制") Then data(i, 2) = "提示版权限制"
+      If InStr(data(i, 3), "央视影音停止") Then data(i, 2) = "提示央视影音停止运行"
+      If InStr(data(i, 3), "稍后再试") Then data(i, 2) = "提示稍后再试"
+      If InStr(data(i, 3), "更新失败") Then data(i, 2) = "提示更新失败"
+
+      If InStr(data(i, 3), "新版本") Then data(i, 2) = "新版本与历史版本"
+      If InStr(data(i, 3), "前一版本") Then data(i, 2) = "新版本与历史版本" 
+      If InStr(data(i, 3), "下载了最新版本") Then data(i, 2) = "新版本与历史版本"
+      If InStr(data(i, 3), "以前版本") Then data(i, 2) = "新版本与历史版本"
+      If InStr(data(i, 3), "升级") Then data(i, 2) = "新版本与历史版本" 
+      If InStr(data(i, 3), "一代比一代差") Then data(i, 2) = "新版本与历史版本" 
+      If InStr(data(i, 3), "越来越差") Then data(i, 2) = "新版本与历史版本" 
+
+      If InStr(data(i, 3), "海外") Then data(i, 2) = "海外用户反馈"
+
+      If InStr(data(i, 3), "搜索") Then data(i, 2) = "搜索问题"
+      If InStr(data(i, 3), "找不") Then data(i, 2) = "搜索问题"
+      If InStr(data(i, 3), "搜出来") Then data(i, 2) = "搜索问题"
+
+      If InStr(data(i, 3), "推送") Then data(i, 2) = "消息提示问题"
+      If InStr(data(i, 3), "消息") Then data(i, 2) = "消息提示问题"
+            
+      If InStr(data(i, 3), "注册") Then data(i, 2) = "注册登录问题"
+      If InStr(data(i, 3), "通行证") Then data(i, 2) = "注册登录问题"
+      If InStr(data(i, 3), "Zhuce") Then data(i, 2) = "注册登录问题"
+      If InStr(data(i, 3), "登录") Then data(i, 2) = "注册登录问题"
+      If InStr(data(i, 3), "登陆") Then data(i, 2) = "注册登录问题"
+      If InStr(data(i, 3), "验证") Then data(i, 2) = "注册登录问题"
+      If InStr(data(i, 3), "密码") Then data(i, 2) = "注册登录问题"
+      If InStr(data(i, 3), "密吗") Then data(i, 2) = "注册登录问题"
+      If InStr(data(i, 3), "账号") Then data(i, 2) = "注册登录问题"
+      If InStr(data(i, 3), "激活") Then data(i, 2) = "注册登录问题"
+
+      If InStr(data(i, 3), "流量") Then data(i, 2) = "流量问题"
+      If InStr(data(i, 3), "包月") Then data(i, 2) = "流量问题"
+      If InStr(data(i, 3), "包流量") Then data(i, 2) = "流量问题"
+
+
+
+      If InStr(data(i, 3), "卫视") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+      If InStr(data(i, 3), "电视台少了") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+      If InStr(data(i, 3), "湖南台") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+      If InStr(data(i, 3), "怎么没有") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+      If InStr(data(i, 3), "太少") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+      If InStr(data(i, 3), "地方频道") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+      If InStr(data(i, 3), "nba") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+      If InStr(data(i, 3), "NBA") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+      If InStr(data(i, 3), "cctv5") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+      If InStr(data(i, 3), "版权") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+
+      If InStr(data(i, 3), "有出入") Then data(i, 2) = "内容错误"
+      
+      If InStr(data(i, 3), "没更新") Then data(i, 2) = "内容缺失"
+      If InStr(data(i, 3), "却没有") Then data(i, 2) = "内容缺失"
+      If InStr(data(i, 3), "下期没出现") Then data(i, 2) = "内容缺失"
+    
+      If InStr(data(i, 3), "广告") Then data(i, 2) = "广告意见"
+     
+      If InStr(data(i, 3), "图标") Then data(i, 2) = "界面设计问题"
+      If InStr(data(i, 3), "界面设计") Then data(i, 2) = "界面设计问题"
+
+      If InStr(data(i, 3), "挺好的") Then data(i, 2) = "积极评价"
+      If InStr(data(i, 3), "不错") Then data(i, 2) = "积极评价"
+      If InStr(data(i, 3), "好用") Then data(i, 2) = "积极评价"
+
+      If InStr(data(i, 3), "太差") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "差差") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "最坏的") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "太难用") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "垃圾") Then data(i, 2) = "负面评价"      
+      If InStr(data(i, 3), "草") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "破") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "烂") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "傻逼") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "妈逼") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "煞笔") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "骗子") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "坑爹") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "妈的") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "屎") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "饭桶") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "不好用") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "逗逼") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "狗屁") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "低能软件") Then data(i, 2) = "负面评价
+  
+
+
+      If InStr(data(i, 3), "付费") Then data(i, 2) = "付费问题"
+      If InStr(data(i, 3), "收费") Then data(i, 2) = "付费问题"
+      If InStr(data(i, 3), "免费") Then data(i, 2) = "付费问题" 
+      If InStr(data(i, 3), "要多少钱") Then data(i, 2) = "付费问题"
+
+      If InStr(data(i, 3), "卸") Then data(i, 2) = "卸载"
+      If InStr(data(i, 3), "删") Then data(i, 2) = "卸载"
+      
+   Next i
+      Range("A2", Range("C2").End(xlDown)) = data
+End Sub
