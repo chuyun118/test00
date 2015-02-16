@@ -305,6 +305,7 @@ Sub classify()
 
       If InStr(data(i, 3), "太差") Then data(i, 2) = "负面评价"
       If InStr(data(i, 3), "差差") Then data(i, 2) = "负面评价"
+      If InStr(data(i, 3), "差评") Then data(i, 2) = "负面评价"
       If InStr(data(i, 3), "最坏的") Then data(i, 2) = "负面评价"
       If InStr(data(i, 3), "太难用") Then data(i, 2) = "负面评价"
       If InStr(data(i, 3), "垃圾") Then data(i, 2) = "负面评价"      
