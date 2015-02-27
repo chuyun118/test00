@@ -191,13 +191,13 @@ Sub classify()
       If InStr(data(i, 3), "悬浮窗") Then data(i, 2) = "希望提供浮窗播放功能"
 
       
-      If InStr(data(i, 3), "下载") Then data(i, 2) = "希望提供视频下载功能"
-      If InStr(data(i, 3), "离线缓存") Then data(i, 2) = "希望提供视频下载功能" 
-      If InStr(data(i, 3), "下载视频") Then data(i, 2) = "希望提供视频下载功能" 
-      If InStr(data(i, 3), "缓存") Then data(i, 2) = "希望提供视频下载功能"
-      If InStr(data(i, 3), "离线") Then data(i, 2) = "希望提供视频下载功能"
-      If InStr(data(i, 3), "保存") Then data(i, 2) = "希望提供视频下载功能"
-      If InStr(data(i, 3), "存下") Then data(i, 2) = "希望提供视频下载功能"
+      If InStr(data(i, 3), "下载") Then data(i, 2) = "缓存问题"
+      If InStr(data(i, 3), "离线缓存") Then data(i, 2) = "缓存问题" 
+      If InStr(data(i, 3), "下载视频") Then data(i, 2) = "缓存问题" 
+      If InStr(data(i, 3), "缓存") Then data(i, 2) = "缓存问题"
+      If InStr(data(i, 3), "离线") Then data(i, 2) = "缓存问题"
+      If InStr(data(i, 3), "保存") Then data(i, 2) = "缓存问题"
+      If InStr(data(i, 3), "存下") Then data(i, 2) = "缓存问题"
 
       If InStr(data(i, 3), "听电视") Then data(i, 2) = "听电视功能需求"
       If InStr(data(i, 3), "听新闻") Then data(i, 2) = "听电视功能需求"
@@ -321,8 +321,6 @@ Sub classify()
       If InStr(data(i, 3), "狗屁") Then data(i, 2) = "负面评价"
       If InStr(data(i, 3), "低能软件") Then data(i, 2) = "负面评价
   
-
-
       If InStr(data(i, 3), "付费") Then data(i, 2) = "付费问题"
       If InStr(data(i, 3), "收费") Then data(i, 2) = "付费问题"
       If InStr(data(i, 3), "免费") Then data(i, 2) = "付费问题" 
