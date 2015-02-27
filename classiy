@@ -236,13 +236,9 @@ Sub classify()
       If InStr(data(i, 3), "播放地址") Then data(i, 2) = "提示播放地址获取失败"
       If InStr(data(i, 3), "连接服务器") Then data(i, 2) = "提示连接服务器失败"
       If InStr(data(i, 3), "请求失败") Then data(i, 2) = "提示请求失败"
-
       
-      If InStr(data(i, 3), "版权限制") Then data(i, 2) = "提示版权限制"
-      If InStr(data(i, 3), "央视影音停止") Then data(i, 2) = "提示央视影音停止运行"
-      If InStr(data(i, 3), "稍后再试") Then data(i, 2) = "提示稍后再试"
-      If InStr(data(i, 3), "更新失败") Then data(i, 2) = "提示更新失败"
-
+      If InStr(data(i, 3), "iphone6") Then data(i, 2) = "iPhone 6 plus 适配问题"
+      
       If InStr(data(i, 3), "新版本") Then data(i, 2) = "新版本与历史版本"
       If InStr(data(i, 3), "前一版本") Then data(i, 2) = "新版本与历史版本" 
       If InStr(data(i, 3), "下载了最新版本") Then data(i, 2) = "新版本与历史版本"
