@@ -191,7 +191,8 @@ Sub classify()
       If InStr(data(i, 3), "悬浮窗") Then data(i, 2) = "希望提供浮窗播放功能"
 
       
-      If InStr(data(i, 3), "下载") Then data(i, 2) = "缓存问题"
+      If InStr(data(i, 3), "下载") Then data(i, 2) = "缓存问题"'当使用"下载"作为关键字时会有30%的非该项内容被识别为该项
+
       If InStr(data(i, 3), "离线缓存") Then data(i, 2) = "缓存问题" 
       If InStr(data(i, 3), "下载视频") Then data(i, 2) = "缓存问题" 
       If InStr(data(i, 3), "缓存") Then data(i, 2) = "缓存问题"
@@ -327,7 +328,8 @@ Sub classify()
       If InStr(data(i, 3), "要多少钱") Then data(i, 2) = "付费问题"
 
       If InStr(data(i, 3), "卸") Then data(i, 2) = "卸载"
-      If InStr(data(i, 3), "删") Then data(i, 2) = "卸载"
+      If InStr(data(i, 3), "删掉") Then data(i, 2) = "卸载"'当用"删除"作为关键字时，会将非该项识别为该项
+
       
    Next i
       Range("A2", Range("C2").End(xlDown)) = data
