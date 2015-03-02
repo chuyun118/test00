@@ -24,7 +24,7 @@ Sub classify()
       If InStr(data(i, 3), "不显示") Then data(i, 2) = "新闻详情页加载缓慢、无法显示"
       If InStr(data(i, 3), "刷不出来") Then data(i, 2) = "新闻详情页加载缓慢、无法显示"
 
-      If InStr(data(i, 3),"听") Then data(i, 2) = "听电视功能异常：没有声音、有杂声、几分钟后断掉"
+      If InStr(data(i, 3),"听") Then data(i, 2) = "听电视功能异常：没有声音、有杂声、几分钟后断掉"'内有"听"关键字语句被识别成其他类别，而本类别判断在先，为什么
       If InStr(data(i, 3),"听电视") Then data(i, 2) = "听电视功能异常：没有声音、有杂声、几分钟后断掉"
       If InStr(data(i, 3),"听新闻") Then data(i, 2) = "听电视功能异常：没有声音、有杂声、几分钟后断掉"
       
