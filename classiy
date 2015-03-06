@@ -123,7 +123,6 @@ Sub classify()
       If InStr(data(i, 3), "画面和语音脱节") Then data(i, 2) = "声画不同步"
       If InStr(data(i, 3), "影音不能同步") Then data(i, 2) = "声画不同步"
       
-      
       If InStr(data(i, 3), "黑屏") Then data(i, 2) = "只有声音没有图像"
       If InStr(data(i, 3), "声音正常") Then data(i, 2) = "只有声音没有图像"
       If InStr(data(i, 3), "只有声音") Then data(i, 2) = "只有声音没有图像"
