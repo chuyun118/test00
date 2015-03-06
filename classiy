@@ -284,6 +284,7 @@ Sub classify()
       If InStr(data(i, 3), "NBA") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
       If InStr(data(i, 3), "cctv5") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
       If InStr(data(i, 3), "版权") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
+      If InStr(data(i, 3), "节目变更") Then data(i, 2) = "内容需求（湖南卫视、江苏卫视、NBA、CCTV5、CETV1）"
 
       If InStr(data(i, 3), "有出入") Then data(i, 2) = "内容错误"
       
